@@ -1,2 +1,2 @@
-# bliss_NT
+# BLISS_NT
 BLISS pipeline for Nature Protocols
