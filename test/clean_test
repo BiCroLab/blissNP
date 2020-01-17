@@ -1,0 +1,3 @@
+rm /home/garner1/Work/pipelines/bliss_NT/bin/runs/*
+rm /home/garner1/Work/pipelines/bliss_NT/patterns/*
+rm -r /home/garner1/Work/pipelines/bliss_NT/dataset

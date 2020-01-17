@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#PREPARE THE PATTERN FILE 
+cd ../bin
+bash prepare_pattern.sh ../test/samplesheet/test.csv 
+mv TEST_DMSO_AGCCATCA ../patterns
+
+#PREPARE THE RUN FILE
+bash prepare_run.sh ../test/samplesheet/test.csv TEST ../test/fastq
+bash runs/run_pipeline_TEST.sh
+
+cd ../test
+
