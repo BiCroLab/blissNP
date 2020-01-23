@@ -27,7 +27,9 @@ $ bwa index /path/to/genome_of_interest.fa
 $ git clone https://github.com/garner1/bliss_NP.git
 $ cd ./bliss_NP
 ```
-* For demonstration and testing purposes, we prepared a small dataset contained in the *bliss_NP/test* directory. The directory contains a fastq file in the *bliss_NP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
+
+For demonstration and testing purposes, we prepared a small dataset contained in the *bliss_NP/test* directory. The directory contains a fastq file in the *bliss_NP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
+
 * Move into the  *bliss_NP/test* directory and run the *test_pipeline* script
 ```
 $ cd ./test
