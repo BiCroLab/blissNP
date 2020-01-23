@@ -6,7 +6,7 @@ We assume that the user is using the Linux operating system (modifications to th
 
 * Follow [these instructions](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
 * Follow [these instructions](http://blog.theseed.org/servers/2010/07/scan-for-matches.html) to install scan_for_matches
-* Install bedtools (the version used in testing the pipeline is ?), samtools (the version used in testing the pipeline is ?) and gnu parallel (the version used in testing the pipeline is ?):
+* Install bedtools (the version used in testing the pipeline is v2.29.2), samtools (the version used in testing the pipeline is v1.9) and gnu parallel (the version used in testing the pipeline is v20190722):
 ```
 $ conda install -c bioconda bedtools
 $ conda install -c bioconda samtools
@@ -43,7 +43,6 @@ Selecting unique UMIs
 Done
 Done with filtering UMIs!
 ```
-
 * In ./bin/bliss.sh set the number of threads used during alignment in line 13 (default 24)
 * In ./bin/bliss.sh set the location of the human or mus reference genome (fasta file) in lines 24 and 28
 * In ./bin/prepare_pattern.sh set the number of mismatches allowed in the barcode in line 10
