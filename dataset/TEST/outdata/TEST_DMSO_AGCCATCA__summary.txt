@@ -13,9 +13,9 @@ Alignment statistics:
 0 + 0 with mate mapped to a different chr
 0 + 0 with mate mapped to a different chr (mapQ>=5)
 Number of left and right cuts:
-    565 -
-    550 +
+    678 -
+    660 +
 Number of DSB locations:
-1115
+1338
 Number of UMIs:
-1115
+1338

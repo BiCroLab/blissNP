@@ -83,6 +83,4 @@ cat "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr |
 mv "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed "$datadir"/"$experiment"/outdata/"$name"_chr-loc-countDifferentUMI.bed
 mv "$datadir"/"$experiment"/outdata/summary.txt "$datadir"/"$experiment"/outdata/"$name"__summary.txt
 
-cat "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr "$datadir"/"$experiment"/outdata/"$name"__q"$quality"_chr-loc-strand-umi-pcr.tsv |
-    awk -F'\t' '{ if ( $4 == "-" ) {$2=$2-1;$3=$3-1;print $0} else {print $0} }'|tr ' ' '\t'
 
