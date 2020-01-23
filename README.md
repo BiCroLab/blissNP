@@ -6,7 +6,7 @@ We assume that the user is using the Linux operating system (modifications to th
 
 * Follow [these instructions](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
 * Follow [these instructions](http://blog.theseed.org/servers/2010/07/scan-for-matches.html) to install scan_for_matches
-* Install bedtools, samtools and gnu parallel:
+* Install bedtools (the version used in testing the pipeline is ?), samtools (the version used in testing the pipeline is ?) and gnu parallel (the version used in testing the pipeline is ?):
 ```
 $ conda install -c bioconda bedtools
 $ conda install -c bioconda samtools
