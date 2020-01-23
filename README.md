@@ -5,6 +5,7 @@ We assume that the user is using the Linux operating system (modifications to th
 ## Setting up the pipeline
 
 * Follow [these instruction](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
+* Follow [these instructions](http://blog.theseed.org/servers/2010/07/scan-for-matches.html) to install scan_for_matches
 * Clone or download this repository:
 ```
 $ git clone https://github.com/garner1/bliss_NP.git
@@ -23,16 +24,14 @@ $ bash test_pipeline
 * The screen output should look like this
 ```
 R1 is  ../test/fastq/test.fastq.gz
-Decompress fastq.gz ...
-Done
 Filterig reads based on patterns ...
 Done
 Parse the fastq files, filtering and trimming ...
 Done! Ready to be aligned to the reference genome!
 Aligning reads to the reference genome ...
 [main] Version: 0.7.17-r1188
-[main] CMD: bwa mem -v 1 -t 24 /home/garner1/Work/genomes/Homo_sapiens.GRCh37.dna.primary_assembly.fa/GRCh37.fa /home/garner1/Work/pipelines/bliss_NP/bin/../dataset/TEST/auxdata/r1.2b.aln.fq
-[main] Real time: 2.997 sec; CPU: 3.146 sec
+[main] CMD: bwa mem -v 1 -t 4 /home/garner1/Work/genomes/Homo_sapiens.GRCh37.dna.primary_assembly.fa/GRCh37.fa /home/garner1/Work/pipelines/bliss_NP/bin/../dataset/TEST/auxdata/r1.2b.aln.fq
+[main] Real time: 3.023 sec; CPU: 3.093 sec
 Done
 Selecting unique UMIs
 Done
