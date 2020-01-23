@@ -14,7 +14,7 @@ $ cd ./bliss_NP
 ```
 $ bwa index /path/to/genome_of_interest.fa
 ```
-* For demonstration and testing purposes, we prepared a small dataset contained in the *test* directory. The directory contains a fastq file in the *test/fastq* directory and a configuration file in the *test/samplesheet* directory
+* For demonstration and testing purposes, we prepared a small dataset contained in the *bliss_NP/test* directory. The directory contains a fastq file in the *bliss_NP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
 
 * In ./bin/bliss.sh set the number of threads used during alignment in line 13 (default 24)
 * In ./bin/bliss.sh set the location of the human or mus reference genome (fasta file) in lines 24 and 28
