@@ -4,7 +4,11 @@ We assume that the user is using the Linux operating system (modifications to th
 
 ## Setting up the pipeline
 
-Follow [these instruction](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
+* Follow [these instruction](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
+* Clone or download this repository
+```
+$ git clone https://github.com/garner1/bliss_NP.git
+```
 
 * In ./bin/bliss.sh set the number of threads used during alignment in line 13 (default 24)
 * In ./bin/bliss.sh set the location of the human or mus reference genome (fasta file) in lines 24 and 28
