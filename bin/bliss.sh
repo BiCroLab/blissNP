@@ -4,13 +4,12 @@
 ################################################################################
 # clear
 # DEFINING VARIABLES
-experiment=$1			# e.i. experiment ID found in fastq filename: expID_R1.fastq.gz
-genome=$2			# e.i. human
+experiment=$1			# experiment ID found in fastq filename: expID_R1.fastq.gz
+genome=$2			# human or mus
 patfile=$3			# is the UMI+barcode pattern file used in the linker
 quality=$4			# minimum mapping quality desired
 fastqDir=$5			# full/path/to/directory containing the compressed fastq file
-# CHANGE THIS TO THE CORRECT LOCATION
-numbproc=24			# set the desired number of threads to be used while mapping to reference genome
+numbproc=4			# set the desired number of threads to be used while mapping to reference genome
 ################################################################################
 # PREPARE DIRECTORY STRUCTURE
 datadir=$PWD/../dataset && mkdir -p $datadir/$experiment
@@ -78,7 +77,12 @@ echo "Number of UMIs:" >> "$datadir"/"$experiment"/outdata/summary.txt
 cat "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr | grep -v "_" | wc -l >> "$datadir"/"$experiment"/outdata/summary.txt
 
 name=`echo $patfile|rev|cut -d'/' -f1|rev`
-mv "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr "$datadir"/"$experiment"/outdata/"$name"__q"$quality"_chr-loc-strand-umi-pcr.tsv
+cat "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr |
+    awk -F'\t' '{ if ( $4 == "-" ) {$2=$2-1;$3=$3-1;print $0} else {print $0} }'| #correct for the bedtools/bamfile mismatch on negative strands end location 
+    tr ' ' '\t' > "$datadir"/"$experiment"/outdata/"$name"__q"$quality"_chr-loc-strand-umi-pcr.tsv
 mv "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed "$datadir"/"$experiment"/outdata/"$name"_chr-loc-countDifferentUMI.bed
 mv "$datadir"/"$experiment"/outdata/summary.txt "$datadir"/"$experiment"/outdata/"$name"__summary.txt
+
+cat "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr "$datadir"/"$experiment"/outdata/"$name"__q"$quality"_chr-loc-strand-umi-pcr.tsv |
+    awk -F'\t' '{ if ( $4 == "-" ) {$2=$2-1;$3=$3-1;print $0} else {print $0} }'|tr ' ' '\t'
 
