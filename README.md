@@ -67,10 +67,10 @@ To configure the pipeline for general usage you should:
 ## Output from the test
 The output from the test dataset is located in ```bliss_NP/dataset/TEST/outdata```.
 Relevant files are (for the test dataset samplename=TEST, description=DMSO,samplebarcode=AGCCATCA):
-* samplename.all.bam: bam file before UMI deduplication
-* samplename.q60.bam: bam file after UMI deduplication
-* samplename_description_samplebarcode__summary.txt: summary of the analysis
-* samplename_description_samplebarcode_chr-loc-countDifferentUMI.bed: list of (chr,start,end,number at this location) for each DSB location
-* samplename_description_samplebarcode__q60_chr-loc-strand-umi-pcr.tsv: list of (chr,start,end,strand,UMI,number of PCR duplicates) for each DSB
+* ```samplename.all.bam```: bam file before UMI deduplication
+* ```samplename.q60.bam```: bam file after UMI deduplication
+* ```samplename_description_samplebarcode__summary.txt```: summary of the analysis
+* ```samplename_description_samplebarcode_chr-loc-countDifferentUMI.bed```: list of (chr,start,end,number at this location) for each DSB location
+* ```samplename_description_samplebarcode__q60_chr-loc-strand-umi-pcr.tsv```: list of (chr,start,end,strand,UMI,number of PCR duplicates) for each DSB
 
 To modify ```samplename```,```description``` and ```samplebarcode``` one needs to edit the ```bliss_NP/test/samplesheet/test.csv``` file (it is possible to introduce more lines, one for each sample in case the library is a pool of different samples with different barcodes)
