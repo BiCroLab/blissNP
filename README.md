@@ -1,6 +1,12 @@
 # BLISS is a versatile and quantitative method for genome-wide profiling of DNA double-strand breaks
 This repository provides step-by-step instructions on how to process [BLISS](https://www.nature.com/articles/ncomms15058) data.
-We assume that the user is using the Linux operating system (modifications to the scripts might be necessary if using Mac OS X). Commands starting with ```$``` are executed in the command line.
+
+We assume that the user is using the Linux operating system (modifications to the scripts might be necessary if using Mac OS X).
+
+Commands starting with ```$``` are executed in the command line.
+
+[If you use this sofware please cite the original manuscript][1]
+[1]: Yan, W.X., Mirzazadeh, R., Garnerone, S., Scott, D., Schneider, M.W., Kallas, T., Custodio, J., Wernersson, E., Li, Y., Gao, L. and Federova, Y., 2017. BLISS is a versatile and quantitative method for genome-wide profiling of DNA double-strand breaks. Nature communications, 8(1), pp.1-9. 
 
 ## Setting up the pipeline
 
