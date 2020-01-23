@@ -51,6 +51,8 @@ Selecting unique UMIs
 Done
 Done with filtering UMIs!
 ```
-* In ./bin/bliss.sh set the number of threads used during alignment in line 13 (default 24)
-* In ./bin/bliss.sh set the location of the human or mus reference genome (fasta file) in lines 24 and 28
-* In ./bin/prepare_pattern.sh set the number of mismatches allowed in the barcode in line 10
+
+To configure the pipeline for general usage you should:
+* In *bliss_NP/bin/bliss.sh* set the number of threads (default to 4) used during alignment at line 12 
+* In *bliss_NP/bin/bliss.sh* set the location of the human reference genome at line 22 or of the mouse reference genome at line 26
+* In *bliss_NP/bin/prepare_pattern.sh* set the number of mismatches allowed in the barcode at line 13
