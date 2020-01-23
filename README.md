@@ -27,7 +27,7 @@ $ bwa index /path/to/genome_of_interest.fa
 $ git clone https://github.com/garner1/bliss_NP.git
 $ cd ./bliss_NP
 ```
-
+## Test demonstration
 For demonstration and testing purposes, we prepared a small dataset contained in the *bliss_NP/test* directory. The directory contains a fastq file in the *bliss_NP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
 
 * Move into the  *bliss_NP/test* directory and run the *test_pipeline* script
@@ -57,6 +57,7 @@ To configure the pipeline for general usage you should:
 * In *bliss_NP/bin/bliss.sh* set the location of the human reference genome on [this line](https://github.com/garner1/bliss_NP/blob/109dcc315e7882827104dd568c40fc5cbc107407/bin/bliss.sh#L23) or of the mouse reference genome [on this line](https://github.com/garner1/bliss_NP/blob/109dcc315e7882827104dd568c40fc5cbc107407/bin/bliss.sh#L27)
 * In *bliss_NP/bin/prepare_pattern.sh* set the number of mismatches allowed in the barcode on [this line](https://github.com/garner1/bliss_NP/blob/243a211e4c29d0d51a45d5675ab8bf06be7c0de9/bin/prepare_pattern.sh#L13)
 
+## Output from the test
 The output from the test dataset is located in *bliss_NP/dataset/TEST/outdata*. Relevant files are (for the test dataset samplename=TEST, description=DMSO,samplebarcode=AGCCATCA):
 * samplename.all.bam: bam file before UMI deduplication
 * samplename.q60.bam: bam file after UMI deduplication
