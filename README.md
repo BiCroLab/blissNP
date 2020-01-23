@@ -4,7 +4,7 @@ We assume that the user is using the Linux operating system (modifications to th
 
 ## Setting up the pipeline
 
-* Follow [these instruction](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
+* Follow [these instructions](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
 * Follow [these instructions](http://blog.theseed.org/servers/2010/07/scan-for-matches.html) to install scan_for_matches
 * Clone or download this repository:
 ```
