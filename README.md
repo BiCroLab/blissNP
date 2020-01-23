@@ -5,9 +5,14 @@ We assume that the user is using the Linux operating system (modifications to th
 ## Setting up the pipeline
 
 * Follow [these instruction](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
-* Clone or download this repository
+* Clone or download this repository:
 ```
 $ git clone https://github.com/garner1/bliss_NP.git
+$ cd ./bliss_NP
+```
+* Make an index of the reference genome of interest using bwa:
+```
+$ bwa index /path/to/genome_of_interest.fa
 ```
 
 * In ./bin/bliss.sh set the number of threads used during alignment in line 13 (default 24)
