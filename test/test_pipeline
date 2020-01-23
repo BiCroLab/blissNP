@@ -3,13 +3,13 @@
 #MOVE IN THE DIRECTORY CONTAINING THE BLISS SCRIPT 
 cd ../bin
 
-#PREPARE THE PATTERN FILE 
+#CREATE THE PATTERN FILE: TEST_DMSO_AGCCATCA 
 bash prepare_pattern.sh ../test/samplesheet/test.csv
 
 #MOVE THE PATTERN FILE IN THE PROPER DIRECTORY
 mv TEST_DMSO_AGCCATCA ../patterns
 
-#CREATE THE RUN FILE
+#CREATE THE SCRIPT TO RUN BLISS
 bash prepare_run.sh ../test/samplesheet/test.csv TEST ../test/fastq
 
 #EXECUTE THE RUN FILE
