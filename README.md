@@ -18,14 +18,14 @@ $ conda install -c bioconda samtools
 ```
 $ sudo apt install parallel
 ```
+* Make an index of the reference genome of interest using bwa:
+```
+$ bwa index /path/to/genome_of_interest.fa
+```
 * Clone or download this repository:
 ```
 $ git clone https://github.com/garner1/bliss_NP.git
 $ cd ./bliss_NP
-```
-* Make an index of the reference genome of interest using bwa:
-```
-$ bwa index /path/to/genome_of_interest.fa
 ```
 * For demonstration and testing purposes, we prepared a small dataset contained in the *bliss_NP/test* directory. The directory contains a fastq file in the *bliss_NP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
 * Move into the  *bliss_NP/test* directory and run the *test_pipeline* script
