@@ -15,6 +15,29 @@ $ cd ./bliss_NP
 $ bwa index /path/to/genome_of_interest.fa
 ```
 * For demonstration and testing purposes, we prepared a small dataset contained in the *bliss_NP/test* directory. The directory contains a fastq file in the *bliss_NP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
+* Move into the  *bliss_NP/test* directory and run the *test_pipeline* script
+```
+$ cd ./test
+$ bash test_pipeline
+```
+* The screen output should look like this
+```
+R1 is  ../test/fastq/test.fastq.gz
+Decompress fastq.gz ...
+Done
+Filterig reads based on patterns ...
+Done
+Parse the fastq files, filtering and trimming ...
+Done! Ready to be aligned to the reference genome!
+Aligning reads to the reference genome ...
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -v 1 -t 24 /home/garner1/Work/genomes/Homo_sapiens.GRCh37.dna.primary_assembly.fa/GRCh37.fa /home/garner1/Work/pipelines/bliss_NP/bin/../dataset/TEST/auxdata/r1.2b.aln.fq
+[main] Real time: 2.997 sec; CPU: 3.146 sec
+Done
+Selecting unique UMIs
+Done
+Done with filtering UMIs!
+```
 
 * In ./bin/bliss.sh set the number of threads used during alignment in line 13 (default 24)
 * In ./bin/bliss.sh set the location of the human or mus reference genome (fasta file) in lines 24 and 28
