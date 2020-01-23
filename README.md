@@ -1,5 +1,5 @@
 # BLISS is a versatile and quantitative method for genome-wide profiling of DNA double-strand breaks
-This repository provides step-by-step instructions on how to process ![BLISS](https://www.nature.com/articles/ncomms15058) data.
+This repository provides step-by-step instructions on how to process [BLISS](https://www.nature.com/articles/ncomms15058) data.
 
 ## Setup
 
