@@ -5,8 +5,8 @@ We assume that the user is using the Linux operating system (modifications to th
 
 Commands starting with ```$``` are executed in the command line.
 
-[If you use this sofware please cite the original manuscript][1]
-[1]: Yan, W.X., Mirzazadeh, R., Garnerone, S., Scott, D., Schneider, M.W., Kallas, T., Custodio, J., Wernersson, E., Li, Y., Gao, L. and Federova, Y., 2017. BLISS is a versatile and quantitative method for genome-wide profiling of DNA double-strand breaks. Nature communications, 8(1), pp.1-9. 
+If you use this sofware please cite the original manuscript:
+Yan, W.X., Mirzazadeh, R., Garnerone, S., Scott, D., Schneider, M.W., Kallas, T., Custodio, J., Wernersson, E., Li, Y., Gao, L. and Federova, Y., 2017. BLISS is a versatile and quantitative method for genome-wide profiling of DNA double-strand breaks. Nature communications, 8(1), pp.1-9. 
 
 ## Setting up the pipeline
 
