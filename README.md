@@ -56,3 +56,10 @@ To configure the pipeline for general usage you should:
 * In *bliss_NP/bin/bliss.sh* set the number of threads (default to 4) used during alignment on [this line](https://github.com/garner1/bliss_NP/blob/109dcc315e7882827104dd568c40fc5cbc107407/bin/bliss.sh#L12) 
 * In *bliss_NP/bin/bliss.sh* set the location of the human reference genome on [this line](https://github.com/garner1/bliss_NP/blob/109dcc315e7882827104dd568c40fc5cbc107407/bin/bliss.sh#L23) or of the mouse reference genome [on this line](https://github.com/garner1/bliss_NP/blob/109dcc315e7882827104dd568c40fc5cbc107407/bin/bliss.sh#L27)
 * In *bliss_NP/bin/prepare_pattern.sh* set the number of mismatches allowed in the barcode on [this line](https://github.com/garner1/bliss_NP/blob/243a211e4c29d0d51a45d5675ab8bf06be7c0de9/bin/prepare_pattern.sh#L13)
+
+The output from the test dataset is located in *bliss_NP/dataset/TEST/outdata*. Relevant files are (for the test dataset samplename=TEST, description=DMSO,samplebarcode=AGCCATCA):
+* samplename.all.bam: bam file before UMI deduplication
+* samplename.q60.bam: bam file after UMI deduplication
+* samplename_description_samplebarcode__summary.txt: summary of the analysis
+* samplename_description_samplebarcode_chr-loc-countDifferentUMI.bed: list of (chr,start,end,number at this location) for each DSB location
+* samplename_description_samplebarcode__q60_chr-loc-strand-umi-pcr.tsv: list of (chr,start,end,strand,UMI,number of PCR duplicates) for each DSB
