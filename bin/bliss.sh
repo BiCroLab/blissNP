@@ -19,12 +19,11 @@ in=$datadir/$experiment/indata && mkdir -p $in
 out=$datadir/$experiment/outdata && mkdir -p $out
 aux=$datadir/$experiment/auxdata && mkdir -p $aux
 if [ $genome == human ]; then
-    #CHANGE THIS TO THE CORRECT LOCATION
-    refgen=$HOME/Work/genomes/Homo_sapiens.GRCh37.dna.primary_assembly.fa/GRCh37.fa
+    refgen=$HOME/Work/genomes/Homo_sapiens.GRCh37.dna.primary_assembly.fa/GRCh37.fa #modify if necessary
 fi
 if [ $genome == mus ]; then
     #CHANGE THIS TO THE CORRECT LOCATION
-    refgen=$HOME/Work/genomes/mm10/mm10.fa
+    refgen=$HOME/Work/genomes/mm10/mm10.fa # modify if necessary
 fi
 ################################################################################
 find $fastqDir -maxdepth 1 -type f -iname "${experiment}*.fastq.gz" | sort > filelist_"$experiment"
@@ -56,7 +55,7 @@ cp "$datadir"/"$experiment"/auxdata/aux "$datadir"/"$experiment"/outdata/pre_umi
 "$bin"/module/umi_filter_1.sh "$datadir"/"$experiment"/outdata/pre_umi_filtering.csv "$datadir"/"$experiment"/outdata/q"$quality"_aux
 "$bin"/module/umi_filter_2.sh "$datadir"/"$experiment"/outdata/q"$quality"_aux "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr
 if [ $genome == human ]; then
-    "$bin"/module/umi_filter_3.sh "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr  "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed
+    "$bin"/module/umi_filter_3.sh "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr "$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed
 fi
 if [ $genome == mus ]; then
     input="$datadir"/"$experiment"/outdata/q"$quality"_chr-loc-strand-umi-pcr
