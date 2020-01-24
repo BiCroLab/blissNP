@@ -27,7 +27,7 @@ $ conda install -c bioconda samtools
 ```
 $ sudo apt install parallel
 ```
-* Make sure that the installed software executables can be found in their conda path directory (if necessary edit your .bashrc, or the equivalent for a different shell): open the file ```~/.bashrc``` in your favorite editor and add ```export PATH="/home/garner1/miniconda3/bin:$PATH"``` at the end of the file. Save and close the file. Then source your .bashrc file:
+* Make sure that the installed software executables can be found in their conda path directory (if necessary edit your .bashrc, or the equivalent for a different shell): open the file ```~/.bashrc``` in your favorite editor and add ```export PATH="~/miniconda3/bin:$PATH"``` at the end of the file (if miniconda was installed in a different location you have to modify the path provided in .bashrc). Save and close the file. Then source your .bashrc file:
 ```
 $ source .bashrc
 ```
