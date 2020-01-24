@@ -5,6 +5,8 @@ We assume that the user is using the Linux operating system (modifications to th
 
 Commands starting with ```$``` are executed in the command line.
 
+The specifics of the machines necessary to run the pipeline will depend mainly on the available time and space resources. We recommend at least 15Gb of RAM and dual core processors.  
+
 If you use this sofware please cite the original manuscript [1].
 
 [1]: [Yan, W.X., Mirzazadeh, R., Garnerone, S., Scott, D., Schneider, M.W., Kallas, T., Custodio, J., Wernersson, E., Li, Y., Gao, L. and Federova, Y., 2017. BLISS is a versatile and quantitative method for genome-wide profiling of DNA double-strand breaks. Nature communications, 8(1), pp.1-9.](https://www.nature.com/articles/ncomms15058) 
