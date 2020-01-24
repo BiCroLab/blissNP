@@ -27,6 +27,7 @@ $ conda install -c bioconda samtools
 ```
 $ sudo apt install parallel
 ```
+* Make sure that the installed software executables can be found in their conda path directory (if necessary edit your .bashrc, or the equivalent for a different shell) 
 * Make an index of the reference genome of interest using bwa:
 ```
 $ bwa index /path/to/genome_of_interest.fa
