@@ -61,7 +61,7 @@ Parse the fastq files, filtering and trimming ...
 Done! Ready to be aligned to the reference genome!
 Aligning reads to the reference genome ...
 [main] Version: 0.7.17-r1188
-[main] CMD: bwa mem -v 1 -t 4 /path/to/reference/genome.fa /path/to/downloaded/repo/bliss_NP/bin/../dataset/TEST/auxdata/r1.2b.aln.fq
+[main] CMD: bwa mem -v 1 -t 4 /path/to/reference/genome.fa /path/to/downloaded/repo/blissNP/bin/../dataset/TEST/auxdata/r1.2b.aln.fq
 [main] Real time: 3.023 sec; CPU: 3.093 sec
 Done
 Selecting unique UMIs
@@ -75,7 +75,7 @@ To configure the pipeline for general usage you should:
 * In ```blissNP/bin/prepare_pattern.sh``` set the number of mismatches allowed in the barcode on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/prepare_pattern.sh#L13)
 
 ## Output from the test
-The output from the test dataset is located in ```bliss_NP/dataset/TEST/outdata```.
+The output from the test dataset is located in ```blissNP/dataset/TEST/outdata```.
 Relevant files are (for the test dataset samplename=TEST, description=DMSO,samplebarcode=AGCCATCA):
 * ```samplename.all.bam```: bam file before UMI deduplication
 * ```samplename.q60.bam```: bam file after UMI deduplication
@@ -83,4 +83,4 @@ Relevant files are (for the test dataset samplename=TEST, description=DMSO,sampl
 * ```samplename_description_samplebarcode_chr-loc-countDifferentUMI.bed```: list of (chr,start,end,number at this location) for each DSB location
 * ```samplename_description_samplebarcode__q60_chr-loc-strand-umi-pcr.tsv```: list of (chr,start,end,strand,UMI,number of PCR duplicates) for each DSB
 
-To modify ```samplename```,```description``` and ```samplebarcode``` one needs to edit the ```bliss_NP/test/samplesheet/test.csv``` file (it is possible to introduce more lines, one for each sample in case the library is a pool of different samples with different barcodes)
+To modify ```samplename```,```description``` and ```samplebarcode``` one needs to edit the ```blissNP/test/samplesheet/test.csv``` file (it is possible to introduce more lines, one for each sample in case the library is a pool of different samples with different barcodes)
