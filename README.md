@@ -23,6 +23,10 @@ $ conda install -c bioconda bedtools
 ```
 $ conda install -c bioconda samtools
 ```
+* Install bwa (the version used in testing the pipeline is v0.7.17-r1188)
+```
+$ conda install -c bioconda bwa
+```
 * Install gnu parallel (the version used in testing the pipeline is v20190722):
 ```
 $ sudo apt install parallel
