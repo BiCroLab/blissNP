@@ -27,7 +27,10 @@ $ conda install -c bioconda samtools
 ```
 $ sudo apt install parallel
 ```
-* Make sure that the installed software executables can be found in their conda path directory (if necessary edit your .bashrc, or the equivalent for a different shell) 
+* Make sure that the installed software executables can be found in their conda path directory (if necessary edit your .bashrc, or the equivalent for a different shell): open the file ```~/.bashrc``` in your favorite editor and add ```export PATH="/home/garner1/miniconda3/bin:$PATH"``` at the end of the file. Save and close the file. Then source your .bashrc file:
+```
+$ source .bashrc
+```
 * Make an index of the reference genome of interest using bwa:
 ```
 $ bwa index /path/to/genome_of_interest.fa
