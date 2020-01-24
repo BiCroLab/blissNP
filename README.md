@@ -61,7 +61,7 @@ Parse the fastq files, filtering and trimming ...
 Done! Ready to be aligned to the reference genome!
 Aligning reads to the reference genome ...
 [main] Version: 0.7.17-r1188
-[main] CMD: bwa mem -v 1 -t 4 /home/garner1/Work/genomes/Homo_sapiens.GRCh37.dna.primary_assembly.fa/GRCh37.fa /home/garner1/Work/pipelines/bliss_NP/bin/../dataset/TEST/auxdata/r1.2b.aln.fq
+[main] CMD: bwa mem -v 1 -t 4 /path/to/reference/genome.fa /path/to/downloaded/repo/bliss_NP/bin/../dataset/TEST/auxdata/r1.2b.aln.fq
 [main] Real time: 3.023 sec; CPU: 3.093 sec
 Done
 Selecting unique UMIs
