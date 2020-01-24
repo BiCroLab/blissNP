@@ -1,5 +1,5 @@
 # BLISS is a versatile and quantitative method for genome-wide profiling of DNA double-strand breaks
-This repository provides step-by-step instructions on how to process [BLISS](https://www.nature.com/articles/ncomms15058) data.
+This repository provides step-by-step instructions on how to process [BLISS](https://www.nature.com/articles/ncomms15058) or sBLISS data.
 
 We assume that the user is using the Linux operating system (modifications to the scripts might be necessary if using Mac OS X).
 
@@ -41,13 +41,13 @@ $ bwa index /path/to/genome_of_interest.fa
 ```
 * Clone or download this repository:
 ```
-$ git clone https://github.com/garner1/bliss_NP.git
-$ cd ./bliss_NP
+$ git clone https://github.com/BiCroLab/blissNP.git
+$ cd ./blissNP
 ```
 ## Test demonstration
-For demonstration and testing purposes, we prepared a small dataset contained in the ```bliss_NP/test``` directory. The directory contains a fastq file in the *bliss_NP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
+For demonstration and testing purposes, we prepared a small dataset contained in the ```blissNP/test``` directory. The directory contains a fastq file in the *blissNP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
 
-* Move into the  *bliss_NP/test* directory and run the *test_pipeline* script
+* Move into the  *blissNP/test* directory and run the *test_pipeline* script
 ```
 $ cd ./test
 $ bash test_pipeline
