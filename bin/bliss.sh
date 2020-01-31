@@ -10,7 +10,7 @@ genome=$3			# human or mouse
 patfile=$4			# is the UMI+barcode pattern file used in the linker
 quality=$5			# minimum mapping quality desired
 fastqDir=$6			# full/path/to/directory containing the compressed fastq file
-numbproc=42			# set the desired number of threads to be used while mapping to reference genome
+numbproc=4			# set the desired number of threads to be used while mapping to reference genome
 ################################################################################
 # PREPARE DIRECTORY STRUCTURE
 datadir=./dataset && mkdir -p $datadir/$experiment/$sample
