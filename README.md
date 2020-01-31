@@ -44,6 +44,16 @@ $ bwa index /path/to/genome_of_interest.fa
 $ git clone https://github.com/BiCroLab/blissNP.git
 $ cd ./blissNP
 ```
+* Configure the BLISS\_PATH by opening the file ```~/.bashrc``` in your favorite editor and add ```export BLISS_PATH="<path/to/blissNP/bin>"``` at the end of the file. Save and close the file. Then source your .bashrc file:
+```
+$ source .bashrc
+```
+
+To configure the pipeline for general usage you should:
+* In ```blissNP/bin/bliss.sh``` set the number of threads (default to 4) used during alignment on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L12) 
+* In ```blissNP/bin/bliss.sh``` set the location of the human reference genome on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L22) or of the mouse reference genome [on this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L26)
+<!-- * In ```blissNP/bin/prepare_pattern.sh``` set the number of mismatches allowed in the barcode on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/prepare_pattern.sh#L13) -->
+
 ## Test demonstration
 For demonstration and testing purposes, we prepared a small dataset contained in the ```blissNP/test``` directory. The directory contains a fastq file in the *blissNP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
 
@@ -68,11 +78,6 @@ Selecting unique UMIs
 Done
 Done with filtering UMIs!
 ```
-
-To configure the pipeline for general usage you should:
-* In ```blissNP/bin/bliss.sh``` set the number of threads (default to 4) used during alignment on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L12) 
-* In ```blissNP/bin/bliss.sh``` set the location of the human reference genome on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L22) or of the mouse reference genome [on this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L26)
-* In ```blissNP/bin/prepare_pattern.sh``` set the number of mismatches allowed in the barcode on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/prepare_pattern.sh#L13)
 
 ## Output from the test
 The output from the test dataset is located in ```blissNP/dataset/TEST/outdata```.
