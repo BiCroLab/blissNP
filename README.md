@@ -48,8 +48,7 @@ $ cd ./blissNP
 ```
 $ source .bashrc
 ```
-
-To configure the pipeline for general usage you should:
+__IMPORTANT:__ To configure the pipeline for general usage you should:
 * In ```blissNP/bin/bliss.sh``` set the number of threads (default to 4) used during alignment on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L12) 
 * In ```blissNP/bin/bliss.sh``` set the location of the human reference genome on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L22) or of the mouse reference genome [on this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L26)
 <!-- * In ```blissNP/bin/prepare_pattern.sh``` set the number of mismatches allowed in the barcode on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/prepare_pattern.sh#L13) -->
