@@ -80,7 +80,7 @@ Done with filtering UMIs!
 
 ## Output from the test
 The output from the test dataset is located in ```blissNP/dataset/TEST/outdata```.
-Relevant files are (for the test dataset samplename=TEST, description=DMSO,samplebarcode=AGCCATCA):
+Relevant files are (for the test dataset experiment ID = TEST, sample ID = DMSO, sample barcode=AGCCATCA):
 * ```samplename.all.bam```: bam file before UMI deduplication
 * ```samplename.q60.bam```: bam file after UMI deduplication
 * ```samplename_description_samplebarcode__summary.txt```: summary of the analysis
