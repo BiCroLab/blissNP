@@ -61,6 +61,12 @@ For demonstration and testing purposes, we prepared a small dataset contained in
 $ cd ./test
 $ bash test_pipeline
 ```
+* In the *blissNP/test/runs* directory a file named ```run_pipeline_TEST.sh``` is generated which contains the command line that runs the pipeline:
+```
+bash /home/garner1/Work/pipelines/blissNP/bin/bliss.sh TEST DMSO human samplesheet/TEST_DMSO_AGCCATCA 60 fastq
+```
+The arguments passed to the *bliss.sh* script are: experiment ID, sample ID, genome ID, path/to/UMI-barcode/pattern/file, threshold on the quality of alignment, /path/to/dir/containing/fastq.
+
 * The screen output should look like this
 ```
 R1 is  ../test/fastq/test.fastq.gz
