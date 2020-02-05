@@ -61,6 +61,12 @@ For demonstration and testing purposes, we prepared a small dataset contained in
 $ cd ./test
 $ bash test_pipeline
 ```
+* In the *blissNP/test/runs* directory a file named ```run_pipeline_TEST.sh``` is generated which contains the command line that runs the pipeline:
+```
+bash /home/garner1/Work/pipelines/blissNP/bin/bliss.sh TEST DMSO human samplesheet/TEST_DMSO_AGCCATCA 60 fastq
+```
+The arguments passed to the *bliss.sh* script are: ```experiment ID```, ```sample ID```, ```genome ID```, ```path/to/UMI-barcode/pattern/file```, ```threshold on the quality of alignment``` and ```/path/to/dir/containing/fastq```.
+
 * The screen output should look like this
 ```
 R1 is  ../test/fastq/test.fastq.gz
@@ -80,11 +86,11 @@ Done with filtering UMIs!
 
 ## Output from the test
 The output from the test dataset is located in ```blissNP/dataset/TEST/outdata```.
-Relevant files are (for the test dataset experiment ID = TEST, sample ID = DMSO, sample barcode = AGCCATCA):
-* ```samplename.all.bam```: bam file before UMI deduplication
-* ```samplename.q60.bam```: bam file after UMI deduplication
-* ```samplename_description_samplebarcode__summary.txt```: summary of the analysis
-* ```samplename_description_samplebarcode_chr-loc-countDifferentUMI.bed```: list of (chr,start,end,number of unique DSB at this location) for each DSB location
-* ```samplename_description_samplebarcode__q60_chr-loc-strand-umi-pcr.tsv```: list of (chr,start,end,strand,UMI,number of PCR duplicates) for each DSB
+Relevant files are (for the test dataset: experiment ID = TEST, sample ID = DMSO, sample barcode = AGCCATCA):
+* ```sampleID.all.bam```: bam file before UMI deduplication
+* ```sampleID.q60.bam```: bam file after UMI deduplication
+* ```experimentID_sampleID_samplebarcode__summary.txt```: summary of the analysis
+* ```experimentID_sampleID_samplebarcode_chr-loc-countDifferentUMI.bed```: list of (chr,start,end,number of unique DSB at this location) for each DSB location
+* ```experimentID_sampleID_samplebarcode__q60_chr-loc-strand-umi-pcr.tsv```: list of (chr,start,end,strand,UMI,number of PCR duplicates) for each DSB
 
 
