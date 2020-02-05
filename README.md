@@ -54,7 +54,7 @@ __IMPORTANT:__ To configure the pipeline for general usage you should:
 <!-- * In ```blissNP/bin/prepare_pattern.sh``` set the number of mismatches allowed in the barcode on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/prepare_pattern.sh#L13) -->
 
 ## Test demonstration
-For demonstration and testing purposes, we prepared a small dataset contained in the ```blissNP/test``` directory. The directory contains a fastq file in the *blissNP/test/fastq* directory and a configuration file in the *bliss_NP/test/samplesheet* directory
+For demonstration and testing purposes, we prepared a small dataset contained in the ```blissNP/test``` directory. The directory contains a fastq file in the *blissNP/test/fastq* directory and a configuration csv file in the *bliss_NP/test/samplesheet* directory. The configuration file has 5 fields: *experiment ID, sample ID, sample barcode,  genome of interest, number of mismatches allowed in the sample barcode*. The *genome of interest* has to be one of: [Hh]omo|hs|sapiens|human|[Mm]us|mm|musculus|mouse.
 
 * Move into the  *blissNP/test* directory and run the *test_pipeline* script
 ```
