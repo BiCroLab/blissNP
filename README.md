@@ -65,7 +65,7 @@ $ bash test_pipeline
 ```
 bash /home/garner1/Work/pipelines/blissNP/bin/bliss.sh TEST DMSO human samplesheet/TEST_DMSO_AGCCATCA 60 fastq
 ```
-The arguments passed to the *bliss.sh* script are: experiment ID, sample ID, genome ID, path/to/UMI-barcode/pattern/file, threshold on the quality of alignment, /path/to/dir/containing/fastq.
+The arguments passed to the *bliss.sh* script are: ```experiment ID```, ```sample ID```, ```genome ID```, ```path/to/UMI-barcode/pattern/file```, ```threshold on the quality of alignment``` and ```/path/to/dir/containing/fastq```.
 
 * The screen output should look like this
 ```
