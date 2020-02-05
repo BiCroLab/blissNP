@@ -80,9 +80,9 @@ Done with filtering UMIs!
 
 ## Output from the test
 The output from the test dataset is located in ```blissNP/dataset/TEST/outdata```.
-Relevant files are (for the test dataset experiment ID = TEST, sample ID = DMSO, sample barcode = AGCCATCA):
-* ```samplename.all.bam```: bam file before UMI deduplication
-* ```samplename.q60.bam```: bam file after UMI deduplication
+Relevant files are (for the test dataset: experiment ID = TEST, sample ID = DMSO, sample barcode = AGCCATCA):
+* ```sampleID.all.bam```: bam file before UMI deduplication
+* ```sampleID.q60.bam```: bam file after UMI deduplication
 * ```samplename_description_samplebarcode__summary.txt```: summary of the analysis
 * ```samplename_description_samplebarcode_chr-loc-countDifferentUMI.bed```: list of (chr,start,end,number of unique DSB at this location) for each DSB location
 * ```samplename_description_samplebarcode__q60_chr-loc-strand-umi-pcr.tsv```: list of (chr,start,end,strand,UMI,number of PCR duplicates) for each DSB
