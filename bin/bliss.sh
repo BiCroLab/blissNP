@@ -49,40 +49,47 @@ rm filelist_"$experiment"
 if [ ! -f $in/r1oneline.fq ]; then
     "$BLISS_PATH"/module/prepare_files.sh  $r1 $in $numb_of_files $r2
 fi
-"$BLISS_PATH"/module/pattern_filtering.sh $in $out $patfile 
-"$BLISS_PATH"/module/prepare_for_mapping.sh $numb_of_files $out $aux $in 
+"$BLISS_PATH"/module/pattern_filtering.sh $in $out $patfile
+if [[ $? -eq 0 ]]; then rm $in/r1.fa; fi 
+"$BLISS_PATH"/module/prepare_for_mapping.sh $numb_of_files $out $aux $in
+if [[ $? -eq 0 ]]; then rm $in/r1oneline.fq $in/r2oneline.fq >& /dev/null; fi 
 "$BLISS_PATH"/module/mapping.sh $numb_of_files $numbproc $refgen $aux $out $sample $quality
+if [[ $? -eq 0 ]]; then rm $aux/r1.2b.aln.fq $aux/r2.2b.aln.fq >& /dev/null; fi 
 "$BLISS_PATH"/module/umi_joining.sh $numb_of_files $out $sample $aux $quality
-cat "$datadir"/"$experiment"/"$sample"/outdata/_q"$quality".bed | cut -f-5 |LC_ALL=C uniq -c | awk '{print $2,$3,$4,$5,$6,$1}' | tr " " "," > "$datadir"/"$experiment"/"$sample"/auxdata/aux
+if [[ $? -eq 0 ]]; then rm $out/filtered.r1.fa; fi 
+cat $out/_q"$quality".bed | cut -f-5 |LC_ALL=C uniq -c | awk '{print $2,$3,$4,$5,$6,$1}' | tr " " "," > $aux/aux
+if [[ $? -eq 0 ]]; then rm $out/_q"$quality".bed; fi 
 #####UMI filtering
-cp "$datadir"/"$experiment"/"$sample"/auxdata/aux "$datadir"/"$experiment"/"$sample"/outdata/pre_umi_filtering.csv
+cp "$datadir"/"$experiment"/"$sample"/auxdata/aux $out/pre_umi_filtering.csv
 
-"$BLISS_PATH"/module/umi_filter_1.sh "$datadir"/"$experiment"/"$sample"/outdata/pre_umi_filtering.csv "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_aux
-"$BLISS_PATH"/module/umi_filter_2.sh "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_aux "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-strand-umi-pcr
+"$BLISS_PATH"/module/umi_filter_1.sh $out/pre_umi_filtering.csv $out/q"$quality"_aux
+"$BLISS_PATH"/module/umi_filter_2.sh $out/q"$quality"_aux $out/q"$quality"_chr-loc-strand-umi-pcr
+if [[ $? -eq 0 ]]; then rm $out/q"$quality"_aux; fi 
+
 if [ $genome == human ]; then
-    "$BLISS_PATH"/module/umi_filter_3.sh "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-strand-umi-pcr "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed
+    "$BLISS_PATH"/module/umi_filter_3.sh $out/q"$quality"_chr-loc-strand-umi-pcr $out/q"$quality"_chr-loc-countDifferentUMI.bed
 fi
 if [ $genome == mouse ]; then
-    input="$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-strand-umi-pcr
-    output="$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed
+    input=$out/q"$quality"_chr-loc-strand-umi-pcr
+    output=$out/q"$quality"_chr-loc-countDifferentUMI.bed
     cat $input | grep -v "_" | sed -e 's/chrX/chr21/g' | sed -e 's/chrY/chr22/g' | cut -f-3 | LC_ALL=C uniq -c | awk '{OFS="\t";print $2,$3,$4,$1}' > $output
 fi
 
-echo "Alignment statistics:" >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
-samtools flagstat --threads $numbproc "$datadir"/"$experiment"/"$sample"/outdata/*.all.bam >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
+echo "Alignment statistics:" >> $out/summary.txt
+samtools flagstat --threads $numbproc $out/*.all.bam >> $out/summary.txt
 
-rm -r "$datadir"/"$experiment"/"$sample"/auxdata* #clean
+rm -r "$aux"* #clean
 
-echo "Number of reads on plus strand and on minus strand:" >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
-cat "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-strand-umi-pcr | grep -v "_" | cut -f4 | sort | uniq -c >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
-echo "Number of DSB locations:" >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
-cat "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed | grep -v "_" | wc -l >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
-echo "Number of UMIs:" >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
-cat "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-strand-umi-pcr | grep -v "_" | wc -l >> "$datadir"/"$experiment"/"$sample"/outdata/summary.txt
+echo "Number of reads on plus strand and on minus strand:" >> $out/summary.txt
+cat $out/q"$quality"_chr-loc-strand-umi-pcr | grep -v "_" | cut -f4 | sort | uniq -c >> $out/summary.txt
+echo "Number of DSB locations:" >> $out/summary.txt
+cat $out/q"$quality"_chr-loc-countDifferentUMI.bed | grep -v "_" | wc -l >> $out/summary.txt
+echo "Number of UMIs:" >> $out/summary.txt
+cat $out/q"$quality"_chr-loc-strand-umi-pcr | grep -v "_" | wc -l >> $out/summary.txt
 
 name=`echo $patfile|rev|cut -d'/' -f1|rev`
-cat "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-strand-umi-pcr |
+cat $out/q"$quality"_chr-loc-strand-umi-pcr |
     awk -F'\t' '{ if ( $4 == "-" ) {$2=$2-1;$3=$3-1;print $0} else {print $0} }'| #correct for the bedtools/bamfile mismatch on negative strands end location 
-    tr ' ' '\t' > "$datadir"/"$experiment"/"$sample"/outdata/"$name"__q"$quality"_chr-loc-strand-umi-pcr.tsv
-mv "$datadir"/"$experiment"/"$sample"/outdata/q"$quality"_chr-loc-countDifferentUMI.bed "$datadir"/"$experiment"/"$sample"/outdata/"$name"_chr-loc-countDifferentUMI.bed
-mv "$datadir"/"$experiment"/"$sample"/outdata/summary.txt "$datadir"/"$experiment"/"$sample"/outdata/"$name"__summary.txt
+    tr ' ' '\t' > $out/"$name"__q"$quality"_chr-loc-strand-umi-pcr.tsv
+mv $out/q"$quality"_chr-loc-countDifferentUMI.bed $out/"$name"_chr-loc-countDifferentUMI.bed
+mv $out/summary.txt $out/"$name"__summary.txt
