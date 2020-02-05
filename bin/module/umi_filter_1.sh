@@ -3,4 +3,5 @@
 input=$1
 output=$2
 
-/usr/local/share/anaconda3/bin/python3 ~/Work/pipelines/BLISS/python/umi_filtering.py "$input" "$output"
+#python3 ../python/umi_filtering.py "$input" "$output"
+python "$BLISS_PATH"/../python/umi_filtering.py "$input" "$output"

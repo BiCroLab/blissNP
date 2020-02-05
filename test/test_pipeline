@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
 #MOVE IN THE DIRECTORY CONTAINING THE BLISS SCRIPT 
-cd ../bin
+# cd ../bin
 
 #CREATE THE PATTERN FILE: TEST_DMSO_AGCCATCA 
-bash prepare_pattern.sh ../test/samplesheet/test.csv
+bash "$BLISS_PATH"/prepare_pattern.sh samplesheet/test.csv
 
-#MOVE THE PATTERN FILE IN THE PROPER DIRECTORY
-mv TEST_DMSO_AGCCATCA ../patterns
+# #MOVE THE PATTERN FILE IN THE PROPER DIRECTORY
+# mv TEST_DMSO_AGCCATCA ../patterns
 
 #CREATE THE SCRIPT TO RUN BLISS
-bash prepare_run.sh ../test/samplesheet/test.csv TEST ../test/fastq
+bash "$BLISS_PATH"/prepare_run.sh samplesheet/test.csv TEST fastq
 
 #EXECUTE THE RUN FILE
-bash runs/run_pipeline_TEST.sh
+bash ./runs/run_pipeline_TEST.sh
 
 #GO BACK TO ORIGINAL DIRECTORY
-cd ../test
+# cd ../test
 
