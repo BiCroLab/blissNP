@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-# THIS SCRIPT CAN BE CALLED LIKE THIS: bash bliss.sh expName human ../patterns/expName_*_"$barcode" 30 /home/garner1/Work/dataset
 ################################################################################
 # clear
 # DEFINING VARIABLES
 experiment=$1		# experiment ID found in fastq filename: expID_R1.fastq.gz
-sample=$2			# unique sample ID
+sample=$2			# sample ID
 genome=$3			# human or mouse
 patfile=$4			# is the UMI+barcode pattern file used in the linker
 quality=$5			# minimum mapping quality desired
