@@ -16,7 +16,7 @@ If you use this sofware please cite the original manuscript [1].
 * Follow [these instructions](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
 * Follow [these instructions](http://blog.theseed.org/servers/2010/07/scan-for-matches.html) to install scan_for_matches
 
-* Create a dedicated conda environment for the pipeline
+* Create a dedicated conda environment
 ```
 $ conda create --name sbliss
 ```
@@ -60,7 +60,7 @@ $ source .bashrc
 __IMPORTANT:__ To configure the pipeline for general usage you should:
 * In ```blissNP/bin/bliss.sh``` set the number of threads (default to 4) used during alignment on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L12) 
 * In ```blissNP/bin/bliss.sh``` set the location of the human reference genome on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L22) or of the mouse reference genome [on this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L26)
-* Prepare a samplesheet configuration file (CSV format) with five fields:
+* Prepare a sample sheet configuration file (CSV format) with five fields:
   1. FASTQ file base name
   2. sample ID
   3. sample barcode
