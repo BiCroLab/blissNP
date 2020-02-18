@@ -15,6 +15,15 @@ If you use this sofware please cite the original manuscript [1].
 
 * Follow [these instructions](https://docs.conda.io/en/latest/miniconda.html) to install Miniconda (providing you with conda, Python and the basic packages they require)
 * Follow [these instructions](http://blog.theseed.org/servers/2010/07/scan-for-matches.html) to install scan_for_matches
+
+* Create a dedicated conda environment for the pipeline
+```
+$ conda create --name sbliss
+```
+* Activate the environment
+```
+$ conda activate sbliss
+```
 * Install bedtools (the version used in testing the pipeline is v2.29.2)
 ```
 $ conda install -c bioconda bedtools
@@ -51,7 +60,19 @@ $ source .bashrc
 __IMPORTANT:__ To configure the pipeline for general usage you should:
 * In ```blissNP/bin/bliss.sh``` set the number of threads (default to 4) used during alignment on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L12) 
 * In ```blissNP/bin/bliss.sh``` set the location of the human reference genome on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L22) or of the mouse reference genome [on this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/bliss.sh#L26)
-<!-- * In ```blissNP/bin/prepare_pattern.sh``` set the number of mismatches allowed in the barcode on [this line](https://github.com/BiCroLab/blissNP/blob/f1aec60e1c4d2631fb4add82505deb06598c0017/bin/prepare_pattern.sh#L13) -->
+* Prepare a samplesheet configuration file (CSV format) with five fields:
+  1. FASTQ file base name
+  2. sample ID
+  3. sample barcode
+  4. organism of interest (must be one of: homo sapiens, hs or human, mus musculus, mm, or mouse)
+  5. number of mismatches allowed in the sample barcode
+
+To run the pipeline on your dataset, use the following command:
+```
+$ bash "$BLISS_PATH"/prepare_pattern.sh <sample sheet>
+$ bash "$BLISS_PATH"/prepare_run.sh <sample sheet> <run name> <full/path/to/directory_with_fastq_files>
+$ bash ./runs/run_pipeline_<run name>
+```
 
 ## Test demonstration
 For demonstration and testing purposes, we prepared a small dataset contained in the ```blissNP/test``` directory. The directory contains a fastq file in the *blissNP/test/fastq* directory and a configuration csv file in the *bliss_NP/test/samplesheet* directory. The configuration file has 5 fields: *experiment ID, sample ID, sample barcode,  genome of interest, number of mismatches allowed in the sample barcode*. The *genome of interest* has to be one of: [Hh]omo|hs|sapiens|human|[Mm]us|mm|musculus|mouse.
