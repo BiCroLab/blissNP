@@ -16,6 +16,7 @@ datadir=./dataset && mkdir -p $datadir/$experiment/$sample
 in=$datadir/$experiment/$sample/indata && mkdir -p $in
 out=$datadir/$experiment/$sample/outdata && mkdir -p $out
 aux=$datadir/$experiment/$sample/auxdata && mkdir -p $aux
+
 if [ $genome == human ]; then
     #CHANGE THIS TO THE CORRECT LOCATION/INDEX_BASENAME
     refgen=$HOME/Work/genomes/Homo_sapiens.GRCh37.dna.primary_assembly.fa/GRCh37.fa # modify if necessary
