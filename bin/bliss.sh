@@ -72,7 +72,7 @@ fi
 if [ $genome == mouse ]; then
     input=$out/q"$quality"_chr-loc-strand-umi-pcr
     output=$out/q"$quality"_chr-loc-countDifferentUMI.bed
-    cat $input | grep -v "_" | sed -e 's/chrX/chr21/g' | sed -e 's/chrY/chr22/g' | cut -f-3 | sort -k1,1 -k2,2g -k3,3g | LC_ALL=C uniq -c | awk '{OFS="\t";print $2,$3,$4,$1}' > $output
+    cat $input | grep -v "_" | sed -e 's/chrX/chr21/g' | sed -e 's/chrY/chr22/g' | awk '{if($3=="+"){printf "%s\t%d\t%d\n", $1, $2, $3+1}else{printf "%s\t%d\t%d\n", $1, $3, $3+1}}' | sort -k1,1 -k2,2g -k3,3g | LC_ALL=C uniq -c | awk '{OFS="\t";print $2,$3,$4,$1}' > $output
 fi
 
 echo "Alignment statistics:" >> $out/summary.txt
