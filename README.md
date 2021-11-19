@@ -71,7 +71,7 @@ To run the pipeline on your dataset, use the following command:
 ```
 $ bash "$BLISS_PATH"/prepare_pattern.sh <sample sheet>
 $ bash "$BLISS_PATH"/prepare_run.sh <sample sheet> <run name> <full/path/to/directory_with_fastq_files>
-$ bash ./runs/run_pipeline_<run name>
+$ bash ./runs/run_pipeline_<run name>.sh
 ```
 
 ## Test demonstration
