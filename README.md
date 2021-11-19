@@ -48,6 +48,7 @@ $ source .bashrc
 ```
 $ bwa index /path/to/genome_of_interest.fa
 ```
+* Create a temporary folder with `mkdir -p $HOME/tmp`.
 * Clone or download this repository:
 ```
 $ git clone https://github.com/BiCroLab/blissNP.git
